@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "basis": "etf-dollar-volume",
+  "source": "Yahoo Finance · chart API (ETF de référence cotés aux États-Unis)",
+  "note": "Volume en dollars échangé sur un ETF répliquant la place : proxy d'activité homogène en USD, et non le turnover officiel de la bourse.",
+  "fetchedAt": "2026-11-13T15:06:56.450Z",
+  "sessionDate": "2026-11-12",
+  "markets": {
+    "asx": {
+      "symbol": "EWA",
+      "instrument": "iShares MSCI Australia",
+      "currency": "USD",
+      "sessionDate": "2026-11-12",
+      "close": 29.21,
+      "shares": 1998800,
+      "dollarVolume": 68296171,
+      "dollarVolumeLast": 58384946,
+      "dayChangePct": -0.65,
+      "sessions": 4
+    },
+    "tse": {
+      "symbol": "EWJ",
+      "instrument": "iShares MSCI Japan",
+      "currency": "USD",
+      "sessionDate": "2026-11-12",
+      "close": 91.47,
+      "shares": 6754200,
+      "dollarVolume": 499035926,
+      "dollarVolumeLast": 617806682,
+      "dayChangePct": -0.71,
+      "sessions": 4
+    },
+    "sse": {
+      "symbol": "ASHR",
+      "instrument": "Xtrackers Harvest CSI 300",
+      "currency": "USD",
+      "sessionDate": "2026-11-12",
+      "close": 30.45,
+      "shares": 2388700,
+      "dollarVolume": 110471912,
+      "dollarVolumeLast": 72735917,
+      "dayChangePct": -1.01,
+      "sessions": 4
+    },
+    "hkex": {
+      "symbol": "EWH",
+      "instrument": "iShares MSCI Hong Kong",
+      "currency": "USD",
+      "sessionDate": "2026-11-12",
+      "close": 23.17,
+      "shares": 8681600,
+      "dollarVolume": 106878115,
+      "dollarVolumeLast": 201152673,
+      "dayChangePct": 0.48,
+      "sessions": 4
+    },
+    "sgx": {
+      "symbol": "EWS",
+      "instrument": "iShares MSCI Singapore",
+      "currency": "USD",
+      "sessionDate": "2026-11-12",
+      "close": 30.29,
+      "shares": 1034100,
+      "dollarVolume": 38142749,
+      "dollarVolumeLast": 31322890,
+      "dayChangePct": -0.69,
+      "sessions": 4
+    },
+    "par": {
+      "symbol": "EWQ",
+      "instrument": "iShares MSCI France",
+      "currency": "USD",
+      "sessionDate": "2026-11-12",
+      "close": 43.82,
+      "shares": 134100,
+      "dollarVolume": 11461568,
+      "dollarVolumeLast": 5876262,
+      "dayChangePct": -0.27,
+      "sessions": 4
+    },
+    "xetra": {
+      "symbol": "EWG",
+      "instrument": "iShares MSCI Germany",
+      "currency": "USD",
+      "sessionDate": "2026-11-12",
+      "close": 42.81,
+      "shares": 3147600,
+      "dollarVolume": 167876422,
+      "dollarVolumeLast": 134748760,
+      "dayChangePct": -0.49,
+      "sessions": 4
+    },
+    "lse": {
+      "symbol": "EWU",
+      "instrument": "iShares MSCI United Kingdom",
+      "currency": "USD",
+      "sessionDate": "2026-11-12",
+      "close": 47.76,
+      "shares": 2057300,
+      "dollarVolume": 122854889,
+      "dollarVolumeLast": 98256645,
+      "dayChangePct": -0.13,
+      "sessions": 4
+    },
+    "nasdaq": {
+      "symbol": "QQQ",
+      "instrument": "Invesco QQQ Trust",
+      "currency": "USD",
+      "sessionDate": "2026-11-12",
+      "close": 688.17,
+      "shares": 36718000,
+      "dollarVolume": 29939531122,
+      "dollarVolumeLast": 25268225432,
+      "dayChangePct": -0.32,
+      "sessions": 4
+    },
+    "nyse": {
+      "symbol": "SPY",
+      "instrument": "SPDR S&P 500 ETF",
+      "currency": "USD",
+      "sessionDate": "2026-11-12",
+      "close": 757.12,
+      "shares": 37243000,
+      "dollarVolume": 31577897790,
+      "dollarVolumeLast": 28197419978,
+      "dayChangePct": -0.35,
+      "sessions": 4
+    }
+  },
+  "failures": [
+    {
+      "id": "moex",
+      "symbol": "ERUS",
+      "reason": "HTTP 404 pour ERUS"
+    }
+  ]
+}

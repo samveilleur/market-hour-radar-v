@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07090c">
+  <title>Bourses mondiales — heure de Paris</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.2' fill='none' stroke='%235ee6a0' stroke-width='1.6'/%3E%3Cpath d='M8 8 L8 3.2 A4.8 4.8 0 0 1 12.2 9.2 Z' fill='%235ee6a0'/%3E%3C/svg%3E">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="pwa-icon-512.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Market Hours Radar">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-mode="live">
+  <div class="app">
+    <header class="top">
+      <div>
+        <p class="eyebrow">Radar des séances</p>
+        <h1>Bourses mondiales</h1>
+        <p id="zone-note" class="zone-note"></p>
+      </div>
+      <div class="live">
+        <p class="live-kicker" id="clock-kicker">Heure de Paris</p>
+        <time id="clock" datetime="">--:--:--</time>
+        <p id="date-line"></p>
+        <p id="season" class="season"></p>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <div class="modes" role="group" aria-label="Jour affiché sur les cadrans">
+        <button type="button" data-mode="live" aria-pressed="true">En direct</button>
+        <button type="button" data-mode="winter" aria-pressed="false" title="Jeudi 15 janvier, heure d'hiver">Hiver</button>
+        <button type="button" data-mode="summer" aria-pressed="false" title="Mercredi 15 juillet, heure d'été">Été</button>
+      </div>
+      <div class="zones" role="group" aria-label="Fuseau horaire des cadrans">
+        <button type="button" data-zone="local" aria-pressed="true" title="Suivre le fuseau de votre appareil">Heure locale</button>
+        <button type="button" data-zone="paris" aria-pressed="false" title="Référence fixe : Europe/Paris">Paris</button>
+      </div>
+      <p id="mode-note"></p>
+      <p id="open-count"></p>
+    </div>
+
+    <main class="stage">
+      <section class="dials" aria-label="Deux cadrans, heure de Paris">
+        <figure class="dial-card">
+          <svg id="dial-am" viewBox="0 0 720 720" role="img" aria-label="Cadran du matin, de minuit à midi, heure de Paris"></svg>
+          <figcaption>Matin · 00:00 – 12:00</figcaption>
+        </figure>
+        <figure class="dial-card">
+          <svg id="dial-pm" viewBox="0 0 720 720" role="img" aria-label="Cadran de l'après-midi, de midi à minuit, heure de Paris"></svg>
+          <figcaption>Après-midi · 12:00 – 24:00</figcaption>
+        </figure>
+      </section>
+
+      <aside class="side">
+        <div id="detail" class="detail">Survolez un anneau pour voir la séance, l'heure locale et le volume.</div>
+        <h2>Places</h2>
+        <ul id="legend"></ul>
+        <div class="scale" aria-hidden="true">
+          <p>Épaisseur selon le volume échangé, échelle logarithmique.</p>
+          <div class="scale-row">
+            <div><i style="height:6px"></i><span>fin</span></div>
+            <div><i style="height:14px"></i><span>moyen</span></div>
+            <div><i style="height:26px"></i><span>épais</span></div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="foot">
+      <p>Chaque anneau est une place. Son épaisseur suit le volume réellement échangé, sur une échelle logarithmique.</p>
+      <p id="volume-note" class="data-note"></p>
+      <p id="ny-note"></p>
+      <p>Les arcs suivent les séances officielles, pauses de midi comprises, converties avec <span lang="en">Intl.DateTimeFormat</span> sur le fuseau choisi (Paris ou votre heure locale). Les jours fériés ne sont pas retirés.</p>
+    </footer>
+  </div>
+  <div id="tooltip" role="tooltip" hidden></div>
+  <script src="time.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js', { scope: './' })
+        .then(() => console.log('Service Worker prêt'))
+        .catch((err) => console.log('Service Worker échoué :', err));
+    }
+  </script>
+</body>
+</html>
